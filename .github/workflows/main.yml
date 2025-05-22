@@ -1,0 +1,17 @@
+name: AWS Credentials
+on:
+  pull_request
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  somename:
+    runs-on: ubuntu-latest
+    steps:
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@latest
+        with:
+          audience: sts.amazonaws.com
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::462753922172:policy/GitHubActions
+    
