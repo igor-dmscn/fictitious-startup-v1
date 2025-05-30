@@ -4,10 +4,10 @@ on:
 permissions:
   id-token: write
   contents: read
-defaults:
-  run:
-    shell: bash
-    working-directory: terraform
+# defaults:
+#   run:
+#     shell: bash
+#     working-directory: terraform
 jobs:
   aws_credentials:
     runs-on: ubuntu-latest
@@ -24,16 +24,16 @@ jobs:
 
       - name: terraform fmt
         id: fmt
-        run: terraform fmt -check
+        run: cd terraform && terraform fmt -check
 
       - name: terraform init
         id: init
-        run: terraform init -input=false
+        run: cd terraform && terraform init -input=false
 
       - name: terraform validate
         id: validate
-        run: terraform validate -no-color
+        run: cd terraform && terraform validate -no-color
 
       - name: terraform plan
         id: plan
-        run: terraform plan -no-color -input=false
+        run: cd terraform && terraform plan -no-color -input=false
