@@ -22,12 +22,9 @@ jobs:
       - name: setup terraform
         uses: hashicorp/setup-terraform@v3
 
-      - name: show files
-        run: ls -la
-
       - name: terraform fmt
         id: fmt
-        run: terraform -chdir=./terraform fmt -check
+        run: ls -la && terraform -chdir=./terraform fmt -check
 
       - name: terraform init
         id: init
