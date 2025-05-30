@@ -24,16 +24,16 @@ jobs:
 
       - name: terraform fmt
         id: fmt
-        run: terraform fmt -check -chdir=./terraform
+        run: terraform -chdir=./terraform fmt -check
 
       - name: terraform init
         id: init
-        run: terraform init -input=false -chdir=./terraform
+        run: terraform -chdir=./terraform init -input=false
 
       - name: terraform validate
         id: validate
-        run: terraform validate -no-color -chdir=./terraform
+        run: terraform -chdir=./terraform validate -no-color
 
       - name: terraform plan
         id: plan
-        run: terraform plan -no-color -input=false -chdir=./terraform
+        run: terraform -chdir=./terraform plan -no-color -input=false
