@@ -19,6 +19,9 @@ jobs:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::462753922172:role/GitHub
 
+      - name: checkout
+        uses: actions/checkout@v4
+
       - name: setup terraform
         uses: hashicorp/setup-terraform@v3
 
