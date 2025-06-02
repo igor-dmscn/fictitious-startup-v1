@@ -4,10 +4,6 @@ on:
 permissions:
   id-token: write
   contents: read
-# defaults:
-#   run:
-#     shell: bash
-#     working-directory: terraform
 jobs:
   aws_credentials:
     runs-on: ubuntu-latest
