@@ -41,4 +41,4 @@ jobs:
 
       - name: terraform apply
         id: apply
-        run: terraform -chdir=./terraform apply -no-color -input=false
+        run: terraform -chdir=./terraform apply -no-color -input=false -auto-approve
