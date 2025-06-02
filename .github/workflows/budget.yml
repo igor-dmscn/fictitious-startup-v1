@@ -25,7 +25,7 @@ jobs:
 
       - name: terraform fmt
         id: fmt
-        run: ls -la && terraform -chdir=./terraform fmt -check
+        run: terraform -chdir=./terraform fmt -check
 
       - name: terraform init
         id: init
