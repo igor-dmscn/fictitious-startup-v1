@@ -7,7 +7,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "ec2" {
-  ami = aws_ami.ubuntu.id
+  ami = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   subnet_id = module.vpc.public_subnet_ids[0]
   associate_public_ip_address = true
