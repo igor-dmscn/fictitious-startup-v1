@@ -40,6 +40,10 @@ jobs:
         id: plan
         run: terraform -chdir=./terraform plan -no-color -input=false
 
-      - name: terraform apply
-        id: apply
-        run: terraform -chdir=./terraform apply -no-color -input=false -auto-approve
+      #- name: terraform apply
+      #  id: apply
+      #  run: terraform -chdir=./terraform apply -no-color -input=false -auto-approve
+      
+      - name: terraform destroy
+        id: destroy
+        run: terraform -chdir=./terraform destroy -no-color -input=false
