@@ -46,4 +46,4 @@ jobs:
       
       - name: terraform destroy
         id: destroy
-        run: terraform -chdir=./terraform destroy -no-color -input=false
+        run: terraform -chdir=./terraform destroy -no-color -input=false -auto-approve
